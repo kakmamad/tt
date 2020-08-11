@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="tapsell-cordova-plugin"
+    version="4.3.5">
+    <name>Tapsell Cordova Plugin</name>
+    <description>Ultimate Cordova Plugin for Tapsell to monetize hybrid apps. Show mobile Ad with single line of JavaScript. Compatible with Cordova CLI, PhoneGap Build, Intel XDK/Crosswalk, Google ChromeApp, Ionic, Meteor, etc.</description>
+    <author>Milad Mohammadi Rezagah</author>	
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,tapsell,monetisation</keywords>
+    <repo>https://github.com/vinoosir/tapsell-cordova-plugin.git</repo>
+    <issue>https://github.com/vinoosir/tapsell-cordova-plugin/issues</issue>	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+    <js-module src="www/Tapsell.js" name="Tapsell">
+        <clobbers target="window.Tapsell" />
+    </js-module>
+	
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="Tapsell">
+				<param name="android-package" value="miladesign.cordova.tapsell.TapsellPlugin"/>
+			</feature>
+		</config-file>
+		
+        <source-file src="src/TapsellPlugin.java" target-dir="src/miladesign/cordova/tapsell" />
+		
+        <lib-file src="libs/tapsell-sdk-android-4.3.5.aar" />
+        <lib-file src="libs/gson-2.8.5.jar" />
+        <lib-file src="libs/okhttp-3.12.1.jar" />
+        <lib-file src="libs/okio-1.15.0.jar" />
+        <lib-file src="libs/retrofit-2.5.0.jar" />
+        <lib-file src="libs/converter-gson-2.5.0.jar" />
+        <lib-file src="libs/logging-interceptor-3.12.1.jar" />
+        <framework src="src/build.gradle" custom="true" type="gradleReference" />
+		
+		<framework src="com.google.android.gms:play-services-ads-identifier:16.0.0" />
+		<framework src="com.google.android.gms:play-services-gcm:16.0.0" />
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        </config-file>
+        
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+			<activity android:name="ir.tapsell.sdk.TapsellAdActivity" 
+				android:configChanges="keyboardHidden|orientation|screenSize" >
+			</activity>
+        </config-file>
+	</platform>
+	
+</plugin>

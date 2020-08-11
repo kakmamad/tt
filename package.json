@@ -1,0 +1,39 @@
+{
+  "name": "tapsell-cordova-plugin",
+  "version": "4.3.5",
+  "description": "Ultimate Cordova Plugin for Tapsell to monetize hybrid apps. Show mobile Ad with single line of JavaScript. Compatible with Cordova CLI, PhoneGap Build, Intel XDK/Crosswalk, Google ChromeApp, Ionic, Meteor, etc.",
+  "cordova": {
+    "id": "tapsell-cordova-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinoosir/tapsell-cordova-plugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "ad",
+    "tapsell",
+    "monetisation",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+"devDependencies": {
+    "cordova": ">=3.0.0"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Milad Mohammadi Rezagah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinoosir/tapsell-cordova-plugin/issues"
+  },
+  "homepage": "https://github.com/vinoosir/tapsell-cordova-plugin#readme"
+}
